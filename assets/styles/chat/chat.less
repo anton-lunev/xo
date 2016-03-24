@@ -1,0 +1,71 @@
+.chat, .private-chat {
+    font-family: Tahoma, Geneva, sans-serif;
+    display: block;
+    width: 250px;
+    float: right;
+
+    .title {
+        width: 250px;
+        height: 32px;
+        line-height: 32px;
+        text-align: center;
+        font-family: 'beer_money', sans-serif;
+        font-size: 26px;
+        color: #fff;
+    }
+
+    &-body {
+        width: 250px;
+        height: 462px;
+        background: rgb(133, 133, 133);
+        overflow-y: auto;
+        overflow-x: hidden;
+        border-radius: 4px;
+        margin-bottom: 6px;
+    }
+
+    &-message {
+        margin: 4px;
+        font-size: 14px;
+        color: #fff;
+
+        .author {
+            font-weight: bold;
+            color: #edc850;;
+        }
+    }
+
+    .chat-text {
+        padding: 4px;
+        height: 20px;
+        width: 200px;
+        border: 2px solid #fff;
+        border-right: 0;
+        border-radius: 4px 0 0 4px;
+        outline: none;
+        transition: all .3s;
+
+        &:focus {
+            border-color: #edc850;
+        }
+    }
+
+    .send-message {
+        font-family: 'beer_money', sans-serif;
+        font-weight: bold;
+        width: 40px;
+        padding: 4px 0;
+        float: right;
+        border-radius: 0 4px 4px 0;
+        transition: all .2s;
+        line-height: 24px;
+
+        &::after {
+            content: '↵';
+        }
+    }
+}
+
+.private-chat {
+    margin-top: 5px;
+}

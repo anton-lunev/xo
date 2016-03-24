@@ -1,0 +1,18 @@
+<table class="table">
+<% for (var i = 0; i < _.size(head); i++) { %>
+    <th><%= head[i] %></th>
+<% } %>
+ <% for (var i = 0; i < _.size(cohort); i++) { %>
+    <tr>
+    <% for (var j = 0; j < _.size(head); j++) { %>
+        <td>
+            <% if (cohort[i].hasOwnProperty(head[j])) { %>
+                <%= moment(cohort[i][head[j]]).format('DD-MM-YYYY') %>
+            <% } else if (cohort[i].events.hasOwnProperty(head[j])) { %>
+                <%= cohort[i].events[head[j]] %>
+            <% } %>
+        </td>
+    <% } %>
+    </tr>
+<% } %>
+</table>

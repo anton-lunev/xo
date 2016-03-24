@@ -1,0 +1,36 @@
+.bonus-popup {
+    min-width: 275px;
+    min-height: 160px;
+
+    &__title {
+        text-align: center;
+        line-height: 22px;
+        font-size: 28px;
+        margin-bottom: 5px;
+    }
+    &__title2 {
+        text-align: center;
+        line-height: 22px;
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+    &__bonus-count {
+        font-size: 38px;
+        margin-bottom: 15px;
+
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 34px;
+            height: 34px;
+            background: url(../../images/coin.png) no-repeat;
+            background-size: 34px;
+            margin-left: 6px;
+            margin-bottom: -5px;
+        }
+    }
+    &__description {
+        width: 230px;
+        margin: 15px auto;
+    }
+}

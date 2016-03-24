@@ -1,0 +1,13 @@
+{
+    "apps" : [{
+        "name"       : "xo-task",
+        "script"     : "./app.js",
+        "args" : ["dev"],
+        "instances"  : "1",
+        "exec_mode"  : "cluster_mode",
+        "ignoreWatch" : ["[\\/\\\\]\\./", "node_modules", ".tmp", "views", "assets", ".idea"],
+        "env": {
+            "NODE_ENV": "development"
+        }
+    }]
+}

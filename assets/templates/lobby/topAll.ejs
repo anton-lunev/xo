@@ -1,0 +1,17 @@
+<ul class="top-all">
+    <% for (var i = 0; i < users.length; i++) {%>
+    <li class="player">
+        <div class="player-wrap">
+            <div class="player-photo-wrap">
+                <img src="<%= (users[i].photo_100) %>"/>
+            </div>
+            <div class="player-stats">
+                <div class="player-name"><%= users[i].first_name %></div>
+                <div class="wins">Победы: <%= users[i].win %></div>
+                <div class="lose">Поражения: <%= users[i].lose %></div>
+                <div class="draw">Ничьи: <%= users[i].draw %></div>
+            </div>
+        </div>
+    </li>
+    <% } %>
+</ul>

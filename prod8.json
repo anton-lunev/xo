@@ -1,0 +1,13 @@
+{
+    "apps" : [{
+        "name"       : "xo-prod-8-cluster",
+        "script"     : "./app.js",
+        "args" : ["prod"],
+        "instances"  : "8",
+        "exec_mode"  : "cluster_mode",
+        "ignoreWatch" : ["[\\/\\\\]\\./", "node_modules", ".tmp", "views", "assets", ".idea"],
+        "env": {
+            "NODE_ENV": "production"
+        }
+    }]
+}

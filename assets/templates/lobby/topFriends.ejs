@@ -1,0 +1,18 @@
+<div class="actions invite-friends"><a href="#" class="btn-yellow invite">Позвать друзей</a></div>
+<ul class="top-friends">
+    <% for (var i = 0; i < friends.length; i++) {%>
+        <li class="player">
+            <div class="player-wrap">
+                <div class="player-photo-wrap">
+                    <img src="<%= (friends[i].photo_100) %>"/>
+                </div>
+                <div class="player-stats">
+                    <div class="player-name"><%= friends[i].first_name %></div>
+                    <div class="wins">Победы: <%= friends[i].win %></div>
+                    <div class="lose">Поражения: <%= friends[i].lose %></div>
+                    <div class="draw">Ничьи: <%= friends[i].draw %></div>
+                </div>
+            </div>
+        </li>
+    <% } %>
+</ul>

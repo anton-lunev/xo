@@ -1,0 +1,161 @@
+
+@slide_width: 310px;
+@slide_height: 325px;
+
+
+.tables-slider {
+    width: 100%;
+    position: relative;
+    text-align: center;
+
+    &__title {
+        font-weight: normal;
+        color: #fff;
+        margin: 10px 0 40px 0;
+    }
+
+    &__back-link {
+        color: #fff;
+        text-decoration: none;
+        font-size: 24px;
+        display: inline-block;
+        margin-top: 22px;
+    }
+
+    &__wrapper {
+        width: @slide_width;
+        height: @slide_height;
+        margin: 0 auto;
+        position: relative;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+    }
+    &__item {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+
+        &--current {
+            z-index: 4;
+            opacity: 1;
+        }
+
+        &--left {
+            transform: translateX(-150px) translateZ(-300px) rotateY(60deg);
+            opacity: .6;
+            z-index: 1;
+        }
+        &--left-out {
+            transform: translateX(-175px) translateZ(-400px) rotateY(60deg);
+            opacity: 0;
+            z-index: 0;
+            visibility: hidden;
+        }
+        &--right {
+            transform: translateX(150px) translateZ(-300px) rotateY(-60deg);
+            z-index: 1;
+            opacity: .6;
+        }
+        &--right-out {
+            transform: translateX(175px) translateZ(-400px) rotateY(-60deg);
+            opacity: 0;
+            z-index: 0;
+            visibility: hidden;
+        }
+    }
+
+    &__nav {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    &__nav-item {
+        top: 185px;
+        width: 0;
+        height: 0;
+        position: absolute;
+        background: none;
+        padding: 1px;
+        border-style: solid;
+        z-index: 1;
+        transition: all .2s;
+
+        &--prev {
+            right: -5px;
+            border-radius: 5px;
+            border-width: 40px 0 40px 30px;
+            border-color: transparent transparent transparent #edc850;
+            &:hover {
+                border-color: transparent transparent transparent #fad652;
+                transform: scale(.95);
+            }
+        }
+        &--next {
+            left: -5px;
+            border-radius: 5px;
+            border-width: 40px 30px 40px 0;
+            border-color: transparent #edc850 transparent transparent;
+            &:hover {
+                border-color: transparent #fad652 transparent transparent;
+                transform: scale(.95);
+            }
+        }
+    }
+}
+
+.table {
+    width: @slide_width;
+    height: @slide_width;
+    background: #bab7b3;
+    border-radius: 8px;
+    text-align: center;
+    color: #fff;
+
+    &__title {
+        font-weight: normal;
+        font-size: 50px;
+        padding-top: 10px;
+        margin: 0 0 10px 0;
+    }
+    &__players-count {
+        font-size: 25px;
+        margin: 10px 0;
+        display: none;
+    }
+    &__bet {
+        background: #9f9e9c;
+        border-radius: 6px;
+        width: 88%;
+        margin: 0 auto 12px auto;
+
+        &-table {
+            display: table;
+            margin: auto;
+        }
+        &-title {
+            display: table-cell;
+            font-size: 32px;
+            vertical-align: middle;
+            padding-right: 12px;
+        }
+        &-price {
+            display: table-cell;
+            font-size: 53px;
+            vertical-align: middle;
+            padding-bottom: 3px;
+        }
+        &-img {
+            display: table-cell;
+            width: 62px;
+            background: url("../../images/money.svg") right center no-repeat;
+        }
+    }
+    &__btn-play {
+        margin: 10px auto 0 auto;
+        font-size: 30px;
+        width: 235px;
+        height: 50px;
+    }
+}

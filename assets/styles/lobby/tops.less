@@ -1,0 +1,75 @@
+.tab-top-friends, .tab-top-all {
+    display: none;
+}
+.invite-friends {
+    text-align: center;
+}
+.top-friends, .top-all {
+    color: #776E65;
+    cursor: default;
+    display: block;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    width: 470px;
+    list-style: none;
+    max-height: 430px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .player {
+        height: 72px;
+        background-color: rgba(238, 228, 218, 0.34902);
+        border-radius: 6px;
+        color: #f9f6f2;
+        text-align: center;
+        margin-bottom: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        display: block;
+
+        .player-wrap {
+            width: 460px;
+            margin-bottom: 10px;
+            height: 60px;
+        }
+
+        .player-photo-wrap {
+            float: left;
+            display: block;
+        }
+
+        .player-photo-wrap img {
+            border-radius: 50%;
+            border: 2px solid #f9f6f2;
+            display: block;
+            width: 55px;
+            height: 55px;
+            margin: 5px;
+        }
+
+        .player-stats {
+            text-align: left;
+            float: left;
+            display: block;
+        }
+
+        .player-stats div {
+            display: block;
+            margin-top: 3px;
+            line-height: 14px;
+            height: 14px;
+        }
+
+        .player-name {
+            font-weight: bold;
+            line-height: 16px;
+            height: 20px;
+            margin-bottom: 3px;
+
+            &::after {
+               content: ':';
+            }
+        }
+    }
+}

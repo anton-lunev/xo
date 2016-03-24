@@ -1,0 +1,64 @@
+.lobby-wrapper {
+    margin: 50px auto;
+    display: block;
+    width: 800px;
+
+    &__chat {
+        float: right;
+    }
+
+    &__actions {
+        float: left;
+    }
+}
+
+.tabs {
+    display: block;
+    height: 32px;
+
+    &__item {
+        display: inline-block;
+        margin-right: 6px;
+        padding: 5px 10px 10px 10px;
+        border-radius: 6px 6px 0 0;
+        float: left;
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
+        transition: background .2s;
+        cursor: pointer;
+
+        &:hover {
+            background: #edc850;
+        }
+
+        &.active {
+            background-color: #858585;
+        }
+    }
+}
+
+.lobby {
+    width: 500px;
+    height: 500px;
+    background-color: #858585;
+    box-sizing: border-box;
+    border-radius: 6px;
+    color: #776e65;
+    font-size: 18px;
+    padding: 15px;
+    position: relative;
+}
+
+.tab-games {
+    position: relative;
+
+    &__tables {
+        position: relative;
+        width: 100%;
+    }
+}
+
+
+
+

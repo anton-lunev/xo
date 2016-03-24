@@ -1,0 +1,28 @@
+<div class="form-inline">
+    <div class="form-group">
+        <label class="sr-only" for="user">user_id</label>
+        <input type="text" class="form-control user_id" id="user" placeholder="user_id" value="<%= user_id %>">
+    </div>
+    <div class="form-group">
+        <label class="sr-only" for="social_id">social_id</label>
+        <input type="text" class="form-control social_id" id="social_id" placeholder="social_id" value="<%= social_id %>">
+    </div>
+
+    <button class="btn btn-default search">Поиск</button>
+</div>
+<% if (User) { %>
+    <p>Данные о пользователе (<%= user_id %>):</p>
+    <pre class="user-info"><%= info %></pre>
+    <p>Редактирование полей пользователя:</p>
+    <div class="form-inline">
+        <div class="form-group">
+            <label for="user">Поле</label>
+            <input type="text" class="form-control field" id="field" placeholder="Поле">
+        </div>
+        <div class="form-group">
+            <label for="value">Значение</label>
+            <input type="text" class="form-control value" id="value" placeholder="Значение">
+        </div>
+        <button class="btn btn-default edit">Редактировать</button>
+</div>
+<% } %>

@@ -1,0 +1,63 @@
+<div class="player left">
+    <% var isPlayerMove  = (GameProcess && GameProcess.timer && Game.whoMove == Game.users[0].id); %>
+    <% var imgClass  = (isPlayerMove) ? 'animated pulse' : ''; %>
+    <div class="player-wrap">
+        <div class="player-photo-wrap">
+            <img class="<%= imgClass %>" src="<%= (Game.users[0].photo_100) %>"/>
+        </div>
+        <div class="player-stats">
+            <div class="wins">Победы: <%= Game.users[0].win %></div>
+            <div class="lose">Поражения: <%= Game.users[0].lose %></div>
+            <div class="draw">Ничьи: <%= Game.users[0].draw %></div>
+        </div>
+    </div>
+    <div class="player-name"><%= Game.users[0].first_name %></div>
+    <% if (isPlayerMove) { %>
+    <div class="progress-bar">
+        <% if (GameProcess.danger) { %>
+        <div class="bar bar-danger" style="width: <%= GameProcess.progress%> "></div>
+        <% } else {%>
+        <div class="bar" style="width: <%= GameProcess.progress%> "></div>
+        <% }%>
+    </div>
+    <% } %>
+</div>
+<div class="game-status">
+    <% if (GameProcess && GameProcess.text) { %>
+    <div class="status"><%= GameProcess.text %></div>
+    <% } %>
+    <% if (GameProcess && GameProcess.timer) { %>
+    <% if (GameProcess.danger) { %>
+    <div class="timer timer-danger"><%= GameProcess.timer %></div>
+    <% } else { %>
+    <div class="timer timer"><%= GameProcess.timer %></div>
+    <% } %>
+    <% } %>
+</div>
+<% if (Game.users[1]) { %>
+<% isPlayerMove  = (GameProcess && GameProcess.timer && Game.whoMove == Game.users[1].id); %>
+<% imgClass  = (isPlayerMove) ? 'animated pulse' : ''; %>
+
+<div class="player right">
+    <div class="player-wrap right">
+        <div class="player-photo-wrap-right">
+            <img class="<%= imgClass %>" src="<%= (Game.users[1].photo_100) %>"/>
+        </div>
+        <div class="player-stats right">
+            <div class="wins">Победы: <%= Game.users[1].win %></div>
+            <div class="lose">Поражения: <%= Game.users[1].lose %></div>
+            <div class="draw">Ничьи: <%= Game.users[1].draw %></div>
+        </div>
+    </div>
+    <div class="player-name-right"><%= Game.users[1].first_name %></div>
+    <% if (isPlayerMove) { %>
+    <div class="progress-bar right">
+        <% if (GameProcess.danger) { %>
+        <div class="bar bar-danger" style="width: <%= GameProcess.progress%> "></div>
+        <% } else {%>
+        <div class="bar" style="width: <%= GameProcess.progress%> "></div>
+        <% }%>
+    </div>
+    <% } %>
+</div>
+<% } %>

@@ -1,0 +1,27 @@
+<div class="tables-slider">
+    <h1 class="tables-slider__title">Выбор стола</h1>
+    <nav class="tables-slider__nav">
+        <button type="button" class="tables-slider__nav-item tables-slider__nav-item--prev"></button>
+        <button type="button" class="tables-slider__nav-item tables-slider__nav-item--next"></button>
+    </nav>
+    <div class="tables-slider__wrapper">
+        <% for (key in tables) { %>
+            <div class="tables-slider__item">
+                <div class="table">
+                    <h2 class="table__title"><%= tables[key].title %></h2>
+                    <!--<p class="table__players-count">Игроков: 120</p>-->
+                    <div class="table__bet">
+                        <div class="table__bet-table">
+                            <span class="table__bet-title">Ставка: </span>
+                            <span class="table__bet-price"><%= tables[key].bet %></span>
+                            <span class="table__bet-img"></span>
+                        </div>
+                    </div>
+                    <button type="button" class="table__btn-play btn-yellow" data-table-id="<%= tables[key].item_id %>">Играть</button>
+                    <button type="button" class="table__btn-play table__btn-play_friend btn-orange" data-table-id="<%= tables[key].item_id %>">Играть с другом</button>
+                </div>
+            </div>
+        <% } %>
+    </div>
+
+</div>

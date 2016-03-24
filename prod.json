@@ -1,0 +1,13 @@
+{
+    "apps" : [{
+        "name"       : "xo-prod",
+        "script"     : "./app.js",
+        "args" : ["prod"],
+        "instances"  : "4",
+        "exec_mode"  : "cluster_mode",
+        "ignoreWatch" : ["[\\/\\\\]\\./", "node_modules", ".tmp", "views", "assets", ".idea"],
+        "env": {
+            "NODE_ENV": "production"
+        }
+    }]
+}

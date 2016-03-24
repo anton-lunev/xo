@@ -1,0 +1,20 @@
+<% for (var i = 0; i < 7 * 7; i++ ) { %>
+    <% var moveAble = ''; %>
+    <% if (i  == 0) {  %>
+        <div class='row'>
+    <% } %>
+    <% if ( (i > 0) && (i % 7) == 0) { %>
+        </div>
+        <div class='row'>
+    <% } %>
+    <% if (((i >= 7 * 7 - 7 && i <= 7 * 7) || (i + 7 <= 49 && Game.position[0][i + 7] != '' )) && (Game.position[0][i] == '' && !Game.isOver && Game.users.length == 2) && Game.whoMove == User.get('id')) { %>
+        <% moveAble = 'cell-moveable';%>
+    <% } %>
+    <% if ((Game.move && Game.move == i) || (Game.winPosition && $.inArray(i, Game.winPosition) != -1)) { %>
+        <div class='cell cell-new' data-cell="<%= i %>">
+    <% } else { %>
+        <div class='cell <%= moveAble %>' data-cell="<%= i %>">
+    <% } %>
+    <%= Game.position[0][i] %>
+        </div>
+<% } %>

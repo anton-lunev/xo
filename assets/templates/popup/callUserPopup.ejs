@@ -1,0 +1,37 @@
+<div class="call-friend-body">
+    <div class="title">Выберите друга</div>
+
+    <% if (friends.length) {%>
+        <div class="friends-list">
+            <% for(var i = 0; i < friends.length; i++) { %>
+                <% if (i  == 0) {  %>
+                    <div class='row'>
+                  <% } %>
+                <% if ( (i > 0) && (i % 3) == 0) { %>
+                    </div>
+                    <div class='row'>
+                <% } %>
+                     <div class="friend-wrap">
+                         <div class="name">
+                             <%= friends[i].first_name %>
+                             <% if (friends[i].online) { %>
+                                <div class="user-online"></div>
+                             <% } %>
+                         </div>
+                         <div class="photo">
+                             <img src="<%= (friends[i].photo) %>"/>
+                         </div>
+                         <div class="buttons-wrap">
+                             <a href="#" class="btn call" data-id="<%= i %>">Позвать</a>
+                         </div>
+                     </div>
+                <% if (i == friends.length - 1 ) { %>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
+    <% } else { %>
+        <div class="spinner"></div>
+    <% } %>
+
+</div>

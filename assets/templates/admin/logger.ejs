@@ -1,0 +1,13 @@
+<% if(message) { %>
+    <pre>[<%= message.date %>] uid: <a href="http://vk.com/id<%= message.from %>"><%= message.from %></a> MESSAGE: <%= message.text %></pre>
+<% } else { %>
+<div class="form-inline">
+    <div class="form-group">
+        <label class="sr-only" for="user">Фильтр</label>
+        <input type="text" class="form-control user_id" id="filter" placeholder="grep">
+    </div>
+    <button class="btn btn-default clear">Очистить</button>
+</div>
+<div class="log-wrap">
+<% } %>
+</div>

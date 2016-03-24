@@ -1,0 +1,13 @@
+<% if (typeof messages != 'undefined') { %>
+    <% for (var i = 0; i < messages.length; i++) { %>
+        <div class="chat-message">
+            <span class="author"><%= messages[i].author %>: </span><%- messages[i].message %>
+        </div>
+    <% }%>
+<% } %>
+<% if (typeof message != 'undefined') { %>
+    <div class="chat-message">
+        <span class="author"><%= message.author %>: </span><%= message.message %>
+    </div>
+
+<% } %>

@@ -1,0 +1,10 @@
+{
+    "apps" : [{
+        "name"        : "dev_lunev",
+        "script"      : "app.js",
+        "log_date_format"  : "DD-MM-YYYY HH:mm Z",
+        "exec_mode"  : "cluster_mode",
+        "ignoreWatch" : ["[\\/\\\\]\\./", "node_modules", ".tmp", "views", "assets", ".idea"],
+        "watch"       : true
+    }]
+}

@@ -1,0 +1,13 @@
+<div class="game-players"></div>
+<div class="game-wrapper">
+    <div class="game-body"></div>
+    <div class="private-chat"></div>
+</div>
+<% if (!(Game.users.length >= 2 && (Game.users[0].id == User.get('id') || Game.users[1].id == User.get('id')))) { %>
+    <div class="info">
+        <div class="buttons-wrap">
+            <a href="#" class="back">Назад к списку игр</a>
+        </div>
+    </div>
+<% } %>
+

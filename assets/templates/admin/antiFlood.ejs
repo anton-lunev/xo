@@ -1,0 +1,55 @@
+<div class="row text-center">
+    <button class="btn btn-success saveConfig">Сохранить</button>
+</div>
+<br/>
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="form-group text-center">
+            <h3>badPatterns</h3>
+        </div>
+        <div class="form-group text-center">
+            <button class="btn btn-primary addInput" id="badPatterns">Добавить</button>
+        </div>
+        <div class="form-inputs">
+            <% for (key in badPatterns) { %>
+            <div class="form-group">
+                <input type="text" class="form-control badPatterns" placeholder="badPatterns" value="<%= badPatterns[key] %>">
+            </div>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="col-md-3 col-md-offset-1">
+        <div class="form-group text-center">
+            <h3>goodPatterns</h3>
+        </div>
+        <div class="form-group text-center">
+            <button class="btn btn-primary addInput" id="goodPatterns">Добавить</button>
+        </div>
+        <div class="form-inputs">
+            <% for (key in goodPatterns) { %>
+            <div class="form-group">
+                <input type="text" class="form-control goodPatterns" placeholder="goodPatterns" value="<%= goodPatterns[key] %>">
+            </div>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="col-md-3 col-md-offset-1">
+        <div class="form-group text-center">
+            <h3>goodWords</h3>
+        </div>
+        <div class="form-group text-center">
+            <button class="btn btn-primary addInput" id="goodWords">Добавить</button>
+        </div>
+        <div class="form-inputs">
+            <% for (key in goodWords) { %>
+            <div class="form-group">
+                <input type="text" class="form-control goodWords" placeholder="goodWords" value="<%= goodWords[key] %>">
+            </div>
+            <% } %>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,259 @@
+/*Профили игроков*/
+
+.info {
+    text-align: center;
+    display: block;
+
+    .back {
+        font-size: 18px;
+        color: #f2f2f2;
+    }
+}
+
+.game-players {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 940px;
+    display: block;
+    height: 80px;
+    padding: 0 10px 10px 10px;
+    color: #f9f6f2;
+
+    .game-status {
+        float: left;
+        height: 64px;
+        display: block;
+        width: 120px;
+        text-align: center;
+
+        .text {
+            font-size: 16px;
+            line-height: 16px;
+            display: block;
+        }
+
+        .timer {
+            margin-top: 10px;
+            font-size: 50px;
+            line-height: 24px;
+            display: block;
+
+            &-danger {
+                color: #d9534f;
+            }
+        }
+    }
+
+    .player {
+        height: 60px;
+        display: block;
+        width: 400px;
+
+        .player-wrap {
+            width: 300px;
+            margin-bottom: 10px;
+            height: 64px;
+        }
+
+        .player-photo-wrap img, .player-photo-wrap-right img {
+            border-radius: 50%;
+            border: 2px solid #f9f6f2;
+            display: block;
+            width: 60px;
+            height: 60px;
+            animation-duration: 1.5s;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+
+        }
+
+        .player-photo-wrap img {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .player-photo-wrap-right img {
+            float: right;
+            margin-left: 10px;
+        }
+
+        .player-stats div{
+            display: block;
+            line-height: 20px;
+            height: 20px;
+        }
+
+        .player-name, .player-name-right {
+            display: block;
+            width: 300px;
+        }
+
+        .player-name {
+            margin-left: 5px;
+        }
+
+        .player-name-right {
+            float: right;
+            text-align: right;
+            margin-right: 5px;
+        }
+
+        .buttons-wrap {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+
+            .btn {
+                background: #edc850;
+                border-radius: 6px;
+                color: #ffffff;
+                font-size: 20px;
+                line-height: 22px;
+                text-decoration: none;
+                height: 22px;
+                text-align: center;
+                padding: 6px 15px;
+                animation-duration: 1.5s;
+                animation-delay: 2s;
+                animation-iteration-count: 1;
+            }
+
+            .btn:hover {
+                background: #FAD552;;
+                text-decoration: none;
+            }
+        }
+
+        .progress-bar {
+            display: block;
+            width: 180px;
+            height: 10px;
+            /*border: 2px solid #f2f2f2;
+            border-radius: 5px;*/
+
+            .bar {
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-color: #5cb85c;
+
+                &-danger {
+                    background-color: #d9534f;
+                }
+            }
+        }
+    }
+
+    .left {
+        float: left;
+    }
+
+    .right {
+        float: right;
+    }
+}
+
+.game-wrapper {
+    margin: 20px auto;
+    display: block;
+    width: 800px;
+    height: 560px;
+}
+/* Игровое поле*/
+
+.game-body {
+    float: left;
+    width: 500px;
+    height: 500px;
+    margin: 40px auto;
+    user-select: none;
+    background: #858585;
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: rgb(119, 110, 101);
+    cursor: default;
+    display: block;
+    font-size: 18px;
+    padding: 15px;
+    position: relative;
+    touch-action: none;
+
+    .row {
+        color: rgb(119, 110, 101);
+        cursor: default;
+        display: block;
+        font-size: 18px;
+        height: 62px;
+        margin-bottom: 6px;
+        width: 470px;
+
+        .cell {
+            background: rgba(238, 228, 218, 0.35);
+            border-radius: 3px;
+            cursor: default;
+            display: block;
+            float: left;
+            font-family: 'schoolbell', sans-serif;
+            font-size: 36px;
+            height: 62px;
+            margin-right: 6px;
+            width: 62px;
+            transition: transform 100ms ease-in-out;
+            line-height: 62px;
+            color: #f9f6f2;
+            text-align: center;
+            font-weight: bold;
+            /*todo: если что убрать анимацию*/
+            /* Chrome, Safari, Opera */
+
+            @keyframes movable-cells {
+                from {box-shadow: none;}
+                to {box-shadow: 0 0 10px 10px rgba(214, 46, 29, 0.24), inset 0 0 0 1px rgba(214, 46, 29, 0.14);}
+            }
+
+            &-moveable {
+                cursor: pointer;
+                box-shadow: 0 0 10px 10px rgba(214, 46, 29, 0.24), inset 0 0 0 1px rgba(214, 46, 29, 0.14);
+                animation: movable-cells 1s infinite;
+            }
+
+            &-new {
+                animation: appear 200ms ease 100ms;
+                animation-fill-mode: backwards;
+                color: #f9f6f2;
+                background: #edcf72;
+                box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
+            }
+        }
+
+        .cell:last-child {
+            margin-right: 0;
+        }
+
+        @keyframes appear {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
+}

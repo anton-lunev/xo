@@ -1,0 +1,21 @@
+<div class="buy-coins-body">
+    <div class="title">Пополнение счета</div>
+    <% for (var i = 0; i < payments.length; i++) { %>
+    <% var text = (payments[i].price > 4 ) ? 'голосов' : 'голоса'; %>
+    <% if (payments[i].price  == 1 ) { text = 'голос'; }%>
+    <div class="info">
+        <div class="info-wrap">
+            <div class="coins-value"><%= payments[i].coins %></div>
+            <div class="coin">&nbsp;</div>
+            <div class="cost">за <%= payments[i].price %> <%= text %></div>
+        </div>
+        <div class="buy-wrap">
+            <div class="buttons-wrap inline">
+                <a href="#" class="btn buy" data-id="<%= i %>">
+                    Купить
+                </a>
+            </div>
+        </div>
+    </div>
+    <% } %>
+</div>

@@ -1,0 +1,18 @@
+<table class="table">
+    <% for (var i = 0; i < _.size(head); i++) { %>
+    <th><%= head[i] %></th>
+    <% } %>
+    <% for (i = 0; i < _.size(refs); i++) { %>
+    <tr>
+        <% for (var j = 0; j < _.size(head); j++) { %>
+        <td>
+            <% if (refs[i].hasOwnProperty(head[j]) && head[j] == 'create_date') { %>
+                <%= moment(refs[i][head[j]]).format('DD-MM-YYYY') %>
+            <% } else if (refs[i].refs.hasOwnProperty(head[j])) { %>
+                <%= refs[i].refs[head[j]] %>
+            <% } %>
+        </td>
+        <% } %>
+    </tr>
+    <% } %>
+</table>

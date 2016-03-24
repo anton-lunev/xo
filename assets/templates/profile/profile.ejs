@@ -1,0 +1,54 @@
+<div class="profile">
+    <div class="profile-wrap">
+        <div class="stats-wrap">
+            <div class="stats"></div>
+            <div class="value stats-value tooltip">Статистика
+
+                <span class="stats-tooltip">
+                    <div class="player-stats">
+                        <div class="wins">Победы: <%= User.win %>
+                            <% if (User.changed && User.changed.win) { %>
+                            <div class="additional"> <%= User.changed.win %> </div>
+                            <% } %>
+                        </div>
+                        <div class="lose">Поражения: <%= User.lose %>
+                            <% if (User.changed && User.changed.lose) { %>
+                            <div class="additional"> <%= User.changed.lose %> </div>
+                            <% } %>
+                        </div>
+                        <div class="draw">Ничьи: <%= User.draw %>
+                            <% if (User.changed && User.changed.draw) { %>
+                            <div class="additional"> <%= User.changed.draw %> </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </span>
+
+            </div>
+        </div>
+
+        <div class="coins-wrap">
+            <div class="coins"></div>
+            <div class="value coins-value"><%= User.coins %>
+                <% if (User.changed && User.changed.coins) { %>
+                <div class="additional"> <%= User.changed.coins %> </div>
+                <% } %>
+            </div>
+            <a href="#" class="btn-add add-coins">+</a>
+        </div>
+
+        <div class="help-wrap">
+            <div class="help"></div>
+        </div>
+
+        <div class="sound-wrap">
+            <% if (User.sound) { %>
+                <div class="sound sound-on"></div>
+            <% } else { %>
+                <div class="sound sound-off"></div>
+            <% } %>
+        </div>
+
+    </div>
+</div>
+
